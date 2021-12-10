@@ -9,9 +9,15 @@ checkBox[4] = document.getElementById("5person");
 checkBox[5] = document.getElementById("6person");
 checkBox[6] = document.getElementById("7person");
 checkBox[7] = document.getElementById("8person");
+checkBox[8] = document.getElementById("9person");
+checkBox[9] = document.getElementById("10person");
+checkBox[10] = document.getElementById("11person");
+checkBox[11] = document.getElementById("12person");
+
 var text = new Array();
 
-var person2 = ["Bomb", "Boom", "X", "Pim", "Nat", "Pai", "Sai", "Mew"];
+//person2 และ text ต้องมี size เท่ากันเดี๋ยวจะ error
+var person2;
 text[0] = document.getElementById("text1");
 text[1] = document.getElementById("text2");
 text[2] = document.getElementById("text3");
@@ -20,6 +26,10 @@ text[4] = document.getElementById("text5");
 text[5] = document.getElementById("text6");
 text[6] = document.getElementById("text7");
 text[7] = document.getElementById("text8");
+text[8] = document.getElementById("text9");
+text[9] = document.getElementById("text10");
+text[10] = document.getElementById("text11");
+text[11] = document.getElementById("text12");
 
 var remnantText=document.getElementById("remnant");
 
@@ -28,15 +38,47 @@ debug[0] = document.getElementById("debug1");
 debug[1] = document.getElementById("debug2");
 
 
+var matches = new Array();
 function match() {
+    person2 = ["Bomb", "Boom", "X", "Pim", "Nat", "Pai", "Sai", "Mew"];
+    if($("#person9").val()!="")
+    {
+        person2.push($("#person9").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person10").val()!="")
+    {
+        person2.push($("#person10").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person11").val()!="")
+    {
+        person2.push($("#person11").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person12").val()!="")
+    {
+        person2.push($("#person12").val());
+    }else{
+        person2.push("empty");
+    }
     justStop=0;
     number = []; //reset data in number and matches
-    for (var i = 0; i <= checkBox.length - 1; i++) {
-        for (var j = 0; j <= checkBox.length - 1; j++) {
-            matches[i][j] = false;
+    //matches=[];
+    // var matches = Array.from(Array(8), () => new Array(8));
+    // matches[0][0] = 'foo';
+
+        for (i=0;i<=checkBox.length - 1;i++) {
+            matches[i]=new Array();
+            for (j=0;j<=checkBox.length - 1;j++) {
+                matches[i][j]=false;
+            }
+            remnant[i]=false;
         }
-        remnant[i]=false;
-    }
+        
     var j = 0;
     //put number in to number[j]
     for (var i = 0; i <= checkBox.length - 1; i++) {
@@ -57,7 +99,6 @@ function match() {
 
     checkMatchesRemnantAndDebug();
     showText();
-
 }
 function reMatch() {
     //shuffle and then check
@@ -127,7 +168,6 @@ function checkMatchesRemnantAndDebug() {
         matches[number[i]][number[i + 1]] = true;
         matches[number[i + 1]][number[i]] = true;
     }
-
     if (number.length % 2 == 1) {
         remnant[number[number.length - 1]] = true;
     }
@@ -159,20 +199,19 @@ function checkMatchesRemnantAndDebug() {
 function showText() {
 
     for (var i = 0; i <= person2.length - 1; i++) {
-        var s = "";
+        var myString = "";
         for (var j = 0; j <= person2.length - 1; j++) {
             if (number[i] == j) {
-                s = person2[j];
+                myString = person2[j];
                 j = 20;
             }
         }
         if(i==number.length-1 && (number.length-1)%2==0 && i%2==0)
         {
-            remnantText.innerHTML=s;
+            remnantText.innerHTML=myString;
         }else{
-            text[i].innerHTML = s;
+            text[i].innerHTML = myString;
         }
-
         
     }
     if((number.length)%2==0){
