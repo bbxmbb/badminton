@@ -150,7 +150,7 @@ function reMatch() {
                     }
                     remnant[i] = false;
                 }*/
-                document.getElementById("possibility2").innerHTML="It is not possible to match";
+                document.getElementById("possibility2").innerHTML="It is impossible to match further";
             }
         }
         countForStop++;
