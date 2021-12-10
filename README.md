@@ -1,4 +1,3 @@
 # badminton
 Please visit https://bbombb-bbombb.github.io/badminton/
-hello what i
-
+hello what the
