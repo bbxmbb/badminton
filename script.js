@@ -13,6 +13,10 @@ checkBox[8] = document.getElementById("9person");
 checkBox[9] = document.getElementById("10person");
 checkBox[10] = document.getElementById("11person");
 checkBox[11] = document.getElementById("12person");
+checkBox[12] = document.getElementById("13person");
+checkBox[13] = document.getElementById("14person");
+checkBox[14] = document.getElementById("15person");
+checkBox[15] = document.getElementById("16person");
 
 var text = new Array();
 
@@ -30,6 +34,10 @@ text[8] = document.getElementById("text9");
 text[9] = document.getElementById("text10");
 text[10] = document.getElementById("text11");
 text[11] = document.getElementById("text12");
+text[12] = document.getElementById("text13");
+text[13] = document.getElementById("text14");
+text[14] = document.getElementById("text15");
+text[15] = document.getElementById("text16");
 
 var remnantText=document.getElementById("remnant");
 
@@ -62,6 +70,30 @@ function match() {
     if($("#person12").val()!="")
     {
         person2.push($("#person12").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person13").val()!="")
+    {
+        person2.push($("#person13").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person14").val()!="")
+    {
+        person2.push($("#person14").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person15").val()!="")
+    {
+        person2.push($("#person15").val());
+    }else{
+        person2.push("empty");
+    }
+    if($("#person16").val()!="")
+    {
+        person2.push($("#person16").val());
     }else{
         person2.push("empty");
     }
