@@ -47,12 +47,11 @@
             color:white;
           }
           .my-input-text{
-            width:150px;
+            width:110px;
           }
           input[type="checkbox"]{
             height:20px;
             width:20px;
-            font-weight: 600;
           }
           input[type="text"]{
             font-weight: 600;
@@ -61,19 +60,27 @@
           td{
             text-align: center;
             font-weight: 500;
+            justify-content: center;
+            align-content: center;
           }
           th{
             text-align: center;
             font-weight: 900;
           }
+          h1{
+            font-weight: 900;
+          }
           </style>
       </head>
     
-      <body data-ember-extension="1">
-          <h1 align="center">Badminton Matcherr!</h1>
-          <div style="max-width:440px" class="container p-3 my-3 rounded-3 bg-light">
+      <body>
+        
+        <center>
+          <h1  class="m-3">Badminton Matcher!</h1>
+          <div style="max-width:440px" class="justify-content-center p-3 m-2 rounded-3 bg-light">
+            
             <div class="">
-              <table style="width:100%" align="center">
+              <table style="width:100%" >
                 <tr>
                   <td style="text-align:left"><input type="checkbox" id="1person"> Bomb </td>
                   <td style="text-align:left"><input type="checkbox" id="2person"> Boom </td>
@@ -177,6 +184,7 @@
             <p align="center" id=possibility2 style="height: 10px;color: red"></p>
     
             </div>
+          </div>
           </div>
           <script src="script.js"></script>
     
